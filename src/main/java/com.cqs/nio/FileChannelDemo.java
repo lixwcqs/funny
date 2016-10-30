@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class FileChannelDemo {
 
-    public static void sendFile(OutputStream os, RandomAccessFile raFile) throws IOException {
+    private static void sendFile(OutputStream os, RandomAccessFile raFile) throws IOException {
         FileChannel channel = raFile.getChannel();
         final int SIZE = 1024 * 1024;//1M
         ByteBuffer buffer = ByteBuffer.allocate(SIZE);

@@ -1,6 +1,5 @@
 package com.cqs.socket.example.demo_nio;
 
-import com.cqs.socket.example.demo2.SerializableUtil;
 import org.apache.commons.io.IOUtils;
 
 import java.io.ByteArrayOutputStream;
