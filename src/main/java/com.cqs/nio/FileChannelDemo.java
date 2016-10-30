@@ -21,23 +21,25 @@ public class FileChannelDemo {
         int length;
         while ((length = channel.read(buffer)) != -1) {
             buffer.flip();
-            while (buffer.hasRemaining()) {
-                buffer.get(bytes, 0, length);
-                os.write(bytes);
-            }
+            buffer.get(bytes, 0, length);
+            os.write(bytes);
             buffer.clear();
         }
         os.flush();
         IOUtils.closeQuietly(channel);
     }
 
-    public static void main(String[] args) throws IOException {
-        Stopwatch stopwatch = Stopwatch.createStarted();
+    public static void copyFile() throws IOException {
+        Stopwatch stopwatch = Stopwatch.createStarted();//new
         RandomAccessFile source = new RandomAccessFile("/home/cqs/Documents/《武林外传》未删节台湾清晰版/[武林外传].01.郭女侠怒砸同福店.佟掌柜妙点迷路人.avi", "r");
         OutputStream os = new FileOutputStream(new File("01.郭女侠怒砸同福店.佟掌柜妙点迷路人.avi"));
         sendFile(os, source);
         stopwatch.stop();
         System.out.println(stopwatch.elapsed(TimeUnit.MILLISECONDS));
+    }
+
+    public static void main(String[] args) {
+
     }
 
 }
