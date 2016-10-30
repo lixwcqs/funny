@@ -33,7 +33,6 @@ public class FileChannelDemo {
 
     public static void main(String[] args) throws IOException {
         Stopwatch stopwatch = Stopwatch.createStarted();
-//        stopwatch.start();
         RandomAccessFile source = new RandomAccessFile("/home/cqs/Documents/《武林外传》未删节台湾清晰版/[武林外传].01.郭女侠怒砸同福店.佟掌柜妙点迷路人.avi", "r");
         OutputStream os = new FileOutputStream(new File("01.郭女侠怒砸同福店.佟掌柜妙点迷路人.avi"));
         sendFile(os, source);
