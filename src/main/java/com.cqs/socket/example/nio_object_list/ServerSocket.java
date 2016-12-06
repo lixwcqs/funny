@@ -1,7 +1,6 @@
 package com.cqs.socket.example.nio_object_list;
 
 import com.cqs.socket.example.demo_nio.Film;
-import com.cqs.socket.example.demo_nio.SerializableUtils;
 import org.apache.commons.io.IOUtils;
 
 import java.io.ByteArrayInputStream;
@@ -14,7 +13,6 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -37,7 +35,7 @@ public class ServerSocket {
             channel.socket().bind(new InetSocketAddress("localhost", 9874));//绑定本地端口，并监听连接
             channel.socket().setReuseAddress(true);
             channel.configureBlocking(false);
-            channel.accept();//接受连接（三次握手之后，建立连接）
+            channel.accept();//接受连接（三次握手之后，建立连接)
             channel.register(selector, SelectionKey.OP_ACCEPT);
             while (selector.select() > 0) {//轮询[这里不可写成while(true))]
                 Set<SelectionKey> keys = selector.selectedKeys();

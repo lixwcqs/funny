@@ -2,7 +2,10 @@ package com.cqs.socket.example.demo_nio;
 
 import org.apache.commons.io.IOUtils;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.RandomAccessFile;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -33,7 +36,8 @@ public class SocketClientNIO {
         try {
             //
             channel = SocketChannel.open();
-            channel.connect(new InetSocketAddress("localhost", 10006));
+//            channel.socket().setKeepAlive(true);
+            channel.connect(new InetSocketAddress("localhost", 10005));
 
             sendFilm(channel, new Film("大话西游", 9.0f));
             sendFilm(channel, new Film("湄公河行动", 8.2f));

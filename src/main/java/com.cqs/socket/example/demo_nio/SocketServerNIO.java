@@ -30,11 +30,12 @@ public class SocketServerNIO {
             selector = Selector.open();
             channel = ServerSocketChannel.open();
             channel.configureBlocking(false);
-            channel.socket().bind(new InetSocketAddress(10005));
+            channel.socket().bind(new InetSocketAddress("localhost",10005));
             channel.socket().setReuseAddress(true);//
             channel.register(selector, SelectionKey.OP_ACCEPT);
             while (selector.select() > 0) {
                 Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
+                System.out.println("======");
                 keys.forEachRemaining(key -> {
                     keys.remove();
                     if (key.channel() instanceof ServerSocketChannel) {

@@ -1,7 +1,6 @@
 package com.cqs.socket.example.demo_nio;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 /**
  * Created by cqs on 10/30/16.

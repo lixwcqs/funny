@@ -4,11 +4,7 @@ package com.cqs.socket.example.demo2;
  * Created by cqs on 10/30/16.
  */
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class SerializableUtil {
 
