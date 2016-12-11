@@ -1,0 +1,31 @@
+
+JVM参数
+-XX:+PrintGCDetails      打印日志
+-XX:+PrintGCDateStamps
+-Xloggc:/home/cloud/Desktop/gc.log  日志文件
+-Xmx8m  堆最大8M
+-Xms8m  堆最小8M
+--------------------------------------------------------------------------------------------
+ 输出日志内容:
+    PSYoungGen=eden+from
+    heapSize=eden+from+to=PSYoungGen+to+ParOldGen=8388608B=8192B=8M
+    Metaspace为直接内存，不占用Java栈(Heap)空间
+
+ 日志输出内容
+ Java HotSpot(TM) 64-Bit Server VM (25.101-b13) for linux-amd64 JRE (1.8.0_101-b13), built on Jun 22 2016 02:59:44 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+ Memory: 4k page, physical 16350464k(11151536k free), swap 9119740k(9119740k free)
+ CommandLine flags: -XX:InitialHeapSize=8388608 -XX:MaxHeapSize=8388608 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseParallelGC
+ #987K->464K(2048K)表示PSYoungGen回收之前使用987K，回收之后使用464K，总共2048K。PSYoungGen表示使用的是parallel scavenger回收算法3035K->2520K(7680K)中Java栈回收之前使用3035K，回收之后使用2520K，总共7680K（没有算to的内存大小）
+ #回收时间长度0.0008623秒
+ 2016-12-10T21:29:06.546+0800: 0.068: [GC (System.gc()) [PSYoungGen: 987K->464K(2048K)] 3035K->2520K(7680K), 0.0008623 secs] [Times: user=0.00 sys=0.00, real=0.00 secs]
+ ##Full GC表示stop the world
+ 2016-12-10T21:29:06.547+0800: 0.069: [Full GC (System.gc()) [PSYoungGen: 464K->0K(2048K)] [ParOldGen: 2056K->429K(5632K)] 2520K->429K(7680K), [Metaspace: 2838K->2838K(1056768K)], 0.0031654 secs] [Times: user=0.01 sys=0.00, real=0.01 secs]
+ Heap
+  PSYoungGen      total 2048K, used 31K [0x00000000ffd80000, 0x0000000100000000, 0x0000000100000000)
+   eden space 1536K, 2% used [0x00000000ffd80000,0x00000000ffd87c68,0x00000000fff00000)
+   from space 512K, 0% used [0x00000000fff00000,0x00000000fff00000,0x00000000fff80000)
+   to   space 512K, 0% used [0x00000000fff80000,0x00000000fff80000,0x0000000100000000)
+  ParOldGen       total 5632K, used 429K [0x00000000ff800000, 0x00000000ffd80000, 0x00000000ffd80000)
+   object space 5632K, 7% used [0x00000000ff800000,0x00000000ff86b410,0x00000000ffd80000)
+  Metaspace       used 2859K, capacity 4494K, committed 4864K, reserved 1056768K
+   class space    used 313K, capacity 386K, committed 512K, reserved 1048576K

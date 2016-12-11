@@ -1,0 +1,6 @@
+-XX:+PrintGCDetails      打印日志
+-XX:+PrintGCDateStamps
+-Xloggc:/home/cqs/Desktop/gc.log  日志文件
+-Xmx8m  堆最大8M
+-Xms8m  堆最小8M
+-XX:MaxDirectMemorySize=10M 直接内存10M
