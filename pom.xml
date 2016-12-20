@@ -24,9 +24,6 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>activemq</module>
-    </modules>
 
     <dependencies>
 
@@ -44,6 +41,12 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.4</version>
         </dependency>
 
 

@@ -3,4 +3,6 @@
 -Xloggc:/home/cqs/Desktop/gc.log  日志文件
 -Xmx8m  堆最大8M
 -Xms8m  堆最小8M
+-Xmn4m  新生代大小4M
 -XX:MaxDirectMemorySize=10M 直接内存10M
+-XX:MaxTenuringThreshold=1 年龄增加到1,就进入老年代(没有被回收掉的话)
