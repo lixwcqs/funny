@@ -20,7 +20,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="activemq" target="1.8" />
+      <module name="example" target="1.8" />
       <module name="funny" target="1.8" />
+      <module name="netty-example" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

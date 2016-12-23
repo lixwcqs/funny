@@ -12,6 +12,8 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/activemq/pom.xml" />
+        <option value="$PROJECT_DIR$/example/pom.xml" />
+        <option value="$PROJECT_DIR$/netty-example/pom.xml" />
       </set>
     </option>
   </component>
