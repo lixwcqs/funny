@@ -1,6 +1,5 @@
 package com.cqs.socket.example.nio_object_list;
 
-import com.cqs.socket.example.demo_nio.Film;
 import org.apache.commons.io.IOUtils;
 
 import java.io.ByteArrayOutputStream;
@@ -9,8 +8,8 @@ import java.io.ObjectOutputStream;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
-import java.util.ArrayList;
-import java.util.List;
+
+import static com.cqs.mock.FilmMock.randFilms;
 
 /**
  * Created by cqs on 16-11-21.
@@ -56,13 +55,4 @@ public class ClientSocket {
 
     }
 
-    List<Film> randFilms() {
-        Film film = new Film("喜剧之王", 9.3f);
-        Film film2 = new Film("大话西游", 9.0f);
-        List<Film> films = new ArrayList<>();
-        films.add(film);
-        films.add(film2);
-        return films;
-
-    }
 }

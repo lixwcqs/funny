@@ -36,7 +36,7 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
     public ObjectEchoClientHandler() {
         firstMessage = new ArrayList<Integer>(ObjectEchoClient.SIZE);
         System.out.println(ObjectEchoClient.SIZE);
-        for (int i = 0; i < ObjectEchoClient.SIZE; i ++) {
+        for (int i = 0; i < ObjectEchoClient.SIZE; i++) {
             firstMessage.add(Integer.valueOf(i));
         }
     }
@@ -50,6 +50,7 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         // Echo back the received object to the server.
+        System.out.println("client read message:\t" + msg);
         ctx.write(msg);
     }
 

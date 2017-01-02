@@ -30,6 +30,11 @@ public class ObjectEchoServerHandler extends ChannelInboundHandlerAdapter {
         System.out.println("接受数据" + msg);
         try {
             ctx.write(msg);
+            try {
+                System.out.println(1/0);
+            } catch (Exception e) {
+                System.err.println("异常"+ e.getMessage());
+            }
         } finally {
             ctx.close();
         }
@@ -43,9 +48,11 @@ public class ObjectEchoServerHandler extends ChannelInboundHandlerAdapter {
         ctx.flush();
     }
 
+    //可以由channelRead方法抛出的异常(若是在channelRead已经处理了[try{}catch{}不执行])触发
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
         ctx.close();
+        System.out.println("捕捉到异常了");
     }
 }

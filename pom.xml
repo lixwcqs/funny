@@ -24,9 +24,6 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>netty-example</module>
-    </modules>
 
     <dependencies>
 
@@ -36,6 +33,12 @@
             <!--<artifactId>spring-core</artifactId>-->
             <!--<version>4.3.3.RELEASE</version>-->
         <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.4.RELEASE</version>
+        </dependency>
 
 
 

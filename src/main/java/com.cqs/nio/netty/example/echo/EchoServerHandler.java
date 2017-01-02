@@ -31,7 +31,6 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
         System.out.println("read msg:\t" + msg);
         ByteBuf bb = (ByteBuf) msg;
         if (msg instanceof ByteBuf){
-
             System.out.println(((ByteBuf) msg).readableBytes());
             bb.release();//不释放会无限循环下去
         }

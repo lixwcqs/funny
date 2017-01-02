@@ -26,7 +26,7 @@ public class JdkProxyDemo {
                     System.out.println("模拟方法加强[1]");
                     Object obj = method.invoke(play, args);
                     System.out.println("模拟方法加强[2]");
-                    return  obj;
+                    return obj;
                 });
         System.out.println(playProxy.getClass());
         playProxy.playGame("英雄联盟");
@@ -38,9 +38,6 @@ public class JdkProxyDemo {
         new JdkProxyDemo().proxy();
         //new JdkProxyDemo().invocationHandlerDemo();
     }
-
-
-
 
 
     private class PlayInvocationHandler implements InvocationHandler {
