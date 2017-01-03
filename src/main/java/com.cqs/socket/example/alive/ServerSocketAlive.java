@@ -13,14 +13,15 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by cqs on 16-12-31.
  */
 public class ServerSocketAlive {
-    private static List<SocketChannel> channels = Collections.synchronizedList(new ArrayList<SocketChannel>());
-
 
     public static void main(String[] args) throws IOException {
         ServerSocketAlive serverSocketAlive = new ServerSocketAlive();
@@ -73,7 +74,6 @@ public class ServerSocketAlive {
         try {
             SocketChannel channel = serverSocketChannel.accept();
             channel.configureBlocking(false);
-            channels.add(channel);
             //将 channel 注册到 Selector
             channel.register(selector, SelectionKey.OP_READ);
         } catch (IOException e) {

@@ -18,8 +18,8 @@ import java.util.concurrent.TimeUnit;
  * Created by cqs on 17-1-1.
  */
 public class ClientSocketAlive {
-    SocketChannel socketChannel = null;
-
+    private SocketChannel socketChannel = null;
+    private int count = 0;
     private final int id = new Random().nextInt(1000);
 
     public static void main(String[] args) throws IOException {
@@ -46,7 +46,7 @@ public class ClientSocketAlive {
         send(FilmMock.randFilms(id));
     }
 
-    private int count = 0;
+
 
     public void send(Object t) throws IOException {
         System.out.println("send data\t" + ++count);
